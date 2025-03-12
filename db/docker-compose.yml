@@ -1,0 +1,14 @@
+services:
+  mongodb:
+    image: mongo:5.0
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./database/mongodb/db:/data/db
+      - ./database/mongodb/dev.archive:/Databases/dev.archive
+      - ./database/mongodb/production:/Databases/production
+    command: [ "--auth" ]
