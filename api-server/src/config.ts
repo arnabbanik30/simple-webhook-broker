@@ -2,10 +2,9 @@ import { config } from "dotenv";
 
 config();
 
-// export const mongoUser = String(process.env.MONGO_INITDB_ROOT_USERNAME)
-export const mongoUser = "root";
+export const mongoUser = String(process.env.MONGO_INITDB_ROOT_USERNAME);
 
-export const mongoPassword = "password";
+export const mongoPassword = String(process.env.MONGO_INITDB_ROOT_PASSWORD);
 
 export const rmqUser = String(process.env.RABBITMQ_USERNAME);
 
